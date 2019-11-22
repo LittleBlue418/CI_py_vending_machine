@@ -10,6 +10,8 @@ def get_change(amount):
     # If the coin is less than or equal to the amount then we should add it to the change
     for coin in [100, 50, 20, 10, 5, 2, 1]:
         if coin <=amount:
+            # deducing the amount of the coin from the amount that we sent in
+            amount -= coin
             change.append(coin)
 
     return change
