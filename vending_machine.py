@@ -1,8 +1,10 @@
 from tests import *
 
-coins = [100, 50, 20, 10, 5, 2, 1]
+usd_coins = [100, 50, 25, 10, 5, 1]
+eur_coins = [100, 50, 20, 10, 5, 2, 1]
 
-def get_change(amount):
+# defaults to using euro coins
+def get_change(amount, coins=eur_coins):
     change = []
     # If the coin is less than or equal to the amount then we should add it to the change
     for coin in coins:
@@ -29,5 +31,7 @@ tests_are_equal(get_change(100),[100])
 tests_are_equal(get_change(3),[2,1])
 tests_are_equal(get_change(7),[5,2])
 tests_are_equal(get_change(9), [5,2,2])
+
+tests_are_equal(get_change(35, usd_coins),[25,10])
 
 print("All tests pass!")
