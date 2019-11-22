@@ -1,14 +1,11 @@
 from tests import *
 
-def get_change(amount):
-    if amount == 0:
-        return []
-    if amount in [100, 50, 20, 10, 5, 2, 1]:
-        return [amount]
+coins = [100, 50, 20, 10, 5, 2, 1]
 
+def get_change(amount):
     change = []
     # If the coin is less than or equal to the amount then we should add it to the change
-    for coin in [100, 50, 20, 10, 5, 2, 1]:
+    for coin in coins:
         # while statement here means it will continue to itterate to give multiples of the same denomination (for 9)
         while coin <=amount:
             # deducing the amount of the coin from the amount that we sent in
